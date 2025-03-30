@@ -14,7 +14,7 @@ export const HamburgerMenu = () => {
         <Pressable
           style={style.text}
           onPress={() => navigation.dispatch(DrawerActions.toggleDrawer)}>
-          <Icon name={'menu-outline'} size={20} color={globalColors.primary}/>
+          <Icon name={'menu-outline'} size={35} color={globalColors.primary}/>
         </Pressable>
       ),
     });
