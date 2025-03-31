@@ -10,7 +10,7 @@ export const ProfileScreen = () => {
 
   return (
     <View style={style.container}>
-      <Text style={(globalStyles.text, {marginTop: top + 20})}>
+      <Text style={globalStyles.text }>
         Profile screen
       </Text>
 
@@ -25,6 +25,6 @@ export const ProfileScreen = () => {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 20,
+    padding: 20,
   },
 });

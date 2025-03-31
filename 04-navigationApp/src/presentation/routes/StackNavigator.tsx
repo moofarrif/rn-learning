@@ -6,6 +6,7 @@ import {SettingsScreen} from '../screens/settings/SettingsScreen';
 import {ProductScreen} from '../screens/products/ProductScreen';
 import {useNavigation} from '@react-navigation/native';
 import {HomeScreen} from '../screens/home/homeScreen';
+import {HamburgerMenu} from '../components/shared/HamburgerMenu';
 
 export type RootStackParams = {
   Home: undefined;
@@ -18,25 +19,28 @@ const Stack = createStackNavigator<RootStackParams>();
 
 export const StackNavigatior = () => {
   const navigator = useNavigation();
-  useEffect(() => {
-    navigator.setOptions({
-      headerShow: false,
-    });
-  }, [ navigator]);
+  // useEffect(() => {
+  //   navigator.setOptions({
+  //     headerShow: false,
+  //   });
+  // }, [navigator]);
 
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: true,
-        headerStyle: {
-          elevation: 0,
-          shadowColor: 'transparent',
-        },
-      }}>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Products" component={ProductsScreen} />
-      <Stack.Screen name="Product" component={ProductScreen} />
-      <Stack.Screen name="Settings" component={SettingsScreen} />
-    </Stack.Navigator>
+    <>
+      <HamburgerMenu />
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+          headerStyle: {
+            elevation: 0,
+            shadowColor: 'transparent',
+          },
+        }}>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Products" component={ProductsScreen} />
+        <Stack.Screen name="Product" component={ProductScreen} />
+        <Stack.Screen name="Settings" component={SettingsScreen} />
+      </Stack.Navigator>
+    </>
   );
 };

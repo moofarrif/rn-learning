@@ -11,14 +11,8 @@ export const HomeScreen = () => {
   return (
     <View style={globalStyles.container}>
       <HamburgerMenu />
-      <PrimaryButton
-        label="Products"
-        onPress={() => navigation.navigate('Products')}
-      />
-      <PrimaryButton
-        label="Settings"
-        onPress={() => navigation.navigate('Settings')}
-      />
+      <PrimaryButton label="Products" onPress={() => navigation.navigate('Products')} />
+      <PrimaryButton label="Settings" onPress={() => navigation.navigate('Settings')} />
     </View>
   );
 };

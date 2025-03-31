@@ -37,20 +37,10 @@ export const ProductsScreen = () => {
   return (
     <View style={globalStyles.container}>
 
-      <FlatList
-        data={Products}
-        keyExtractor={item => item.id.toString()}
-        renderItem={({item}) => (
-          <PrimaryButton
-            label={`${item.name} `}
-            onPress={() => navigation.navigate('Product', item)}
-          />
-        )}
-      />
-      <PrimaryButton
-        onPress={() => navigation.navigate('Home')}
-        label="Settings"
-      />
+      <FlatList data={Products} keyExtractor={item => item.id.toString()} renderItem={({item}) => <PrimaryButton label={`${item.name} `} onPress={() => navigation.navigate('Product', item)} />} />
+      
+      <PrimaryButton label="Back" onPress={() => navigation.goBack()} />
+      <PrimaryButton onPress={() => navigation.navigate('Home')} label="Settings" />
     </View>
   );
 };
