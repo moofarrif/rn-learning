@@ -10,7 +10,7 @@ export const ProfileScreen = () => {
 
   return (
     <View style={style.container}>
-      <Text style={globalStyles.text }>
+      <Text style={[globalStyles.text, { marginTop: top}]}>
         Profile screen
       </Text>
 

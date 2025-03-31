@@ -5,6 +5,7 @@ import {StackActions, useNavigation} from '@react-navigation/native';
 
 export const SettingsScreen = () => {
   const navigator = useNavigation();
+  
   return (
     <View style={globalStyles.container}>
       <Text style={globalStyles.text}>Setting screen</Text>

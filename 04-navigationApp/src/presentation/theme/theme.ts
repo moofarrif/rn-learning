@@ -23,7 +23,6 @@ export const globalStyles = StyleSheet.create({
     borderRadius: 5,
     padding: 10,
     margin: 10,
-    width: '100%',
     alignItems: 'center',
   },
 

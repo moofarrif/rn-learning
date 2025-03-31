@@ -8,7 +8,7 @@ const Tab = createMaterialTopTabNavigator();
 export const TopTabNavigator = () => {
   return (
     <>
-    <HamburgerMenu />
+      <HamburgerMenu />
       <Tab.Navigator>
         <Tab.Screen name="Profile" component={ProfileScreen} />
         <Tab.Screen name="About" component={AboutScreen} />
