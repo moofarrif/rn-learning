@@ -23,7 +23,7 @@ export const MoviePoster = ({movies, height = 420, width = 300}: Props) => {
         opacity: pressed ? 0.9 : 1,
       })}
       onPress={() => navigation.navigate('Details', {movieId: movies.id})}>
-      <View style={(style.imageContainer)}>
+      <View style={style.imageContainer}>
         <Image style={style.image} source={{uri: movies.poster}} />
       </View>
     </Pressable>

@@ -4,9 +4,8 @@ import {
   Text,
   View,
 } from 'react-native';
-import React, { useRef} from 'react';
+import React, {useRef} from 'react';
 import {Movie} from '../../../core/entities/movie.entity';
-import {resetCache} from '../../../../metro.config';
 import {FlatList} from 'react-native-gesture-handler';
 import {MoviePoster} from './MoviePoster';
 import {useEffect} from 'react';
@@ -27,13 +26,17 @@ export const HorizontalCarousel = ({movie, title, loadNextPage}: Props) => {
   }, [movie]);
 
   const onScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-    if (isLoading.current) return;
+    if (isLoading.current) {
+      return;
+    }
     const {contentOffset, layoutMeasurement, contentSize} = event.nativeEvent;
 
     const isEndReached =
       contentOffset.x + layoutMeasurement.width + 600 >= contentSize.width;
 
-    if (!isEndReached) return;
+    if (!isEndReached) {
+      return;
+    }
 
     isLoading.current = true;
     loadNextPage && loadNextPage();

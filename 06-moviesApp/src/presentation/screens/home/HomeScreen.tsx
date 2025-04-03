@@ -1,9 +1,10 @@
-import {Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {useMovies} from '../../hooks/useMovies';
 import {ScrollView} from 'react-native-gesture-handler';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {PosterCarousel} from '../../components/movies/PosterCarousel';
 import {HorizontalCarousel} from '../../components/movies/HorizontalCarousel';
+import {FullScreenLoader} from '../../components/loaders/FullScreenLoader';
 
 export const HomeScreen = () => {
   const {top} = useSafeAreaInsets();
@@ -11,12 +12,12 @@ export const HomeScreen = () => {
     useMovies();
 
   if (isLoading) {
-    return <Text>Loading...</Text>;
+    return <FullScreenLoader />;
   }
 
   return (
     <ScrollView>
-      <View style={{marginTop: top + 20, paddingBottom: 50}}>
+      <View style={(style.container, {marginTop: top + 20})}>
         {/* main */}
         <PosterCarousel movies={nowPlaying} />
         {/* popular */}
@@ -33,3 +34,9 @@ export const HomeScreen = () => {
     </ScrollView>
   );
 };
+
+const style = StyleSheet.create({
+  container: {
+    paddingBottom: 50,
+  },
+});

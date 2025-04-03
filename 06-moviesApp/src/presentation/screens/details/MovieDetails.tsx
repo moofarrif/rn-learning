@@ -1,4 +1,4 @@
-import {Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {FullMovie} from '../../../core/entities/movie.entity';
 import {Formatter} from '../../../config/helpers/formatter';
 import {Cast} from '../../../core/entities/cast.entity';
@@ -34,15 +34,7 @@ export const MovieDetails = ({movie, cast}: Props) => {
 
       {/* Casting */}
       <View style={{marginTop: 10, marginBottom: 50}}>
-        <Text
-          style={{
-            fontSize: 23,
-            marginVertical: 10,
-            fontWeight: 'bold',
-            marginHorizontal: 20,
-          }}>
-          Actores
-        </Text>
+        <Text style={style.text}>Actores</Text>
 
         <FlatList
           data={cast}
@@ -55,3 +47,12 @@ export const MovieDetails = ({movie, cast}: Props) => {
     </>
   );
 };
+
+const style = StyleSheet.create({
+  text: {
+    fontSize: 23,
+    marginVertical: 10,
+    fontWeight: 'bold',
+    marginHorizontal: 20,
+  },
+});

@@ -1,4 +1,4 @@
-import { THE_MOVIE_DB_API_KEY } from '@env';
+import {THE_MOVIE_DB_API_KEY} from '@env';
 import {AxiosAdapter} from './http/axios.adapter';
 
 export const movieDBFetcher = new AxiosAdapter({
