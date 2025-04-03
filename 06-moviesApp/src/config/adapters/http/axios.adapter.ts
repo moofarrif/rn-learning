@@ -21,7 +21,7 @@ export class AxiosAdapter implements HttpAdapter {
     options?: Record<string, unknown> | undefined,
   ): Promise<T> {
     try {
-      const {data} = await this.axiosInstance.get<T>(url, options);
+      const { data } = await this.axiosInstance.get<T>(url, options);
       return data;
     } catch (error) {
       throw new Error(`Error fetching get: ${url} `);

@@ -1,10 +1,11 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import {HomeScreen} from '../screens/home/HomeScreen';
-import DetailsScreen from '../screens/details/DetailsScreen';
+import { DetailsScreen } from '../screens/details/DetailsScreen';
+
 
 export type RootStackParamList = {
   Home: undefined;
-  Detail: { moveId: number };
+  Details: { movieId: number };
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -16,7 +17,7 @@ export const Navigation = () => {
         headerShown: false,
       }}>
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Detail" component={DetailsScreen} />
+      <Stack.Screen name="Details" component={DetailsScreen} />
     </Stack.Navigator>
   );
 };

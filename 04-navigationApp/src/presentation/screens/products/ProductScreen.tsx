@@ -4,12 +4,17 @@ import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {RootStackParams} from '../../routes/StackNavigator';
 import {useEffect} from 'react';
 import {PrimaryButton} from '../../components/shared/PrimaryButton';
+import { StackScreenProps } from '@react-navigation/stack';
 
-export const ProductScreen = () => {
-  const {id, name, price} = useRoute<RouteProp<RootStackParams, 'Product'>>().params;
+type Props = StackScreenProps<RootStackParams, 'Product'>;
 
-  const navigation = useNavigation();
+export const ProductScreen : React.FC<Props>= ({route,navigation}) => {
 
+  // const {id, name, price} = useRoute<RouteProp<RootStackParams, 'Product'>>().params;
+  // const navigation = useNavigation();
+  const {id, name, price} = route.params
+
+ 
   useEffect(() => {
     navigation.setOptions({
       title: name,

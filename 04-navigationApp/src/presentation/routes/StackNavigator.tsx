@@ -1,10 +1,9 @@
-import {useEffect} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import {ProductsScreen} from '../screens/products/ProductsScreen';
 import {SettingsScreen} from '../screens/settings/SettingsScreen';
 import {ProductScreen} from '../screens/products/ProductScreen';
-import {useNavigation} from '@react-navigation/native';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {HomeScreen} from '../screens/home/homeScreen';
 import {HamburgerMenu} from '../components/shared/HamburgerMenu';
 
@@ -18,12 +17,6 @@ export type RootStackParams = {
 const Stack = createStackNavigator<RootStackParams>();
 
 export const StackNavigatior = () => {
-  const navigator = useNavigation();
-  // useEffect(() => {
-  //   navigator.setOptions({
-  //     headerShow: false,
-  //   });
-  // }, [navigator]);
 
   return (
     <>
