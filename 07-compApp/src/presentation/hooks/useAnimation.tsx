@@ -37,19 +37,14 @@ export const useAnimation = () => {
     easing = Easing.linear,
     callback = () => {},
   }) => {
-
-    animatedTop.setValue( initialPosition );
-    Animated.timing( animatedTop, {
+    animatedTop.setValue(initialPosition);
+    Animated.timing(animatedTop, {
       toValue: toValue,
       duration: duration,
       useNativeDriver: true,
       easing: easing,
-    }).start( callback );
-
-
+    }).start(callback);
   };
-
-
 
   return {
     // Properties

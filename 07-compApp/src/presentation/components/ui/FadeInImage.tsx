@@ -4,6 +4,7 @@ import {
   Animated,
   ImageStyle,
   StyleProp,
+  Text,
   View,
 } from 'react-native';
 import {useAnimation} from '../../hooks/useAnimation';
