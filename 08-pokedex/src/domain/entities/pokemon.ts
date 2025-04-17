@@ -5,7 +5,7 @@ export interface Pokemon {
   avatar: string;
   sprites: string[];
 
-  color?: string;
+  color: string;
 
   games: string[];
   stats: Stat[];

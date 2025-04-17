@@ -1,21 +1,32 @@
-import {View, StyleSheet, Image} from 'react-native';
+import {Image, Pressable, StyleSheet, View} from 'react-native';
 import {Pokemon} from '../../../domain/entities/pokemon';
 import {Card, Text} from 'react-native-paper';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {FadeInImage} from '../ui/FadeInImage';
+import {RootStackParams} from '../../navigator/StackNavigator';
 
 interface Props {
   pokemon: Pokemon;
 }
 
 export const PokemonCard = ({pokemon}: Props) => {
-  console.log('pokemon', pokemon);
+  const navigation = useNavigation<NavigationProp<RootStackParams>>();
+
+  console.log(pokemon);
+
   return (
-    <View>
-      <Card>
+    <Pressable
+      style={{flex: 1}}
+      onPress={() =>
+        navigation.navigate('PokemonScreen', {id: pokemon.id})
+      }>
+      <Card style={[styles.cardContainer, {backgroundColor: pokemon.color}]}>
         <Text style={styles.name} variant="bodyLarge" lineBreakMode="middle">
           {pokemon.name}
-          {'\n#'}
+          {'\n#' + pokemon.id}
         </Text>
 
+        {/* Pokeball background image */}
         <View style={styles.pokeballContainer}>
           <Image
             source={require('../../../assets/pokeball-light.png')}
@@ -23,13 +34,13 @@ export const PokemonCard = ({pokemon}: Props) => {
           />
         </View>
 
-        <Image
-          source={{uri: pokemon.avatar}}
-          style={styles.pokemonImage}
-          resizeMode="contain"
-        />
+        {/* POkemon Image */}
+        <FadeInImage uri={pokemon.avatar} style={styles.pokemonImage} />
+
+        {/* Types */}
+        <Text style={[styles.name, {marginTop: 35}]}>{pokemon.types[0]}</Text>
       </Card>
-    </View>
+    </Pressable>
   );
 };
 

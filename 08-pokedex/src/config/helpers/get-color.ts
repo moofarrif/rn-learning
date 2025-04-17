@@ -1,7 +1,7 @@
 import ImageColors from 'react-native-image-colors';
 
 export const getColorFromImage = async (image: string) => {
-  const fallbackColor = 'grey';
+  const fallbackColor = 'blue';
 
   const colors = await ImageColors.getColors(image, {
     fallback: fallbackColor,

@@ -6,7 +6,7 @@ import {getTheme} from '../../config/theme/themeConfig';
 
 export const ThemeContext = createContext({
   isDark: true,
-  theme: getTheme('dark'),
+  theme: getTheme('light'),
 });
 
 export const ThemeContextProvider = ({children}: PropsWithChildren) => {
