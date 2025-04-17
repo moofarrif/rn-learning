@@ -276,7 +276,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.pokedex;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.pokedex;
 				PRODUCT_NAME = pokedex;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -312,7 +312,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.pokedex;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.pokedex;
 				PRODUCT_NAME = pokedex;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
